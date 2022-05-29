@@ -20,53 +20,91 @@ namespace LeventureDesign
         //所有的string类型初始化或清除时都必须为""
         public static int getInt(TextBox txt1)
         {
-            return int.Parse(txt1.Text.Trim().ToString());
+            try
+            {
+                return int.Parse(txt1.Text.Trim().ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return -1;
+            }
         }
         public static string PresentUser = "";//设置当前去用户账号
         public static int PresentAuthority = -1;//设置当前用户权限等级
         public static string PresentName = "";
         public static bool isAvaliable(KeyPressEventArgs e) //是否是可用的数字字母组合
         {
-            bool isava = false;
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar))
-                isava = false;
-            else
-                isava = true;
+            try
+            {
+                bool isava = false;
+                if (char.IsDigit(e.KeyChar) || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar))
+                    isava = false;
+                else
+                    isava = true;
 
-            return isava;
+                return isava;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         public static bool IsAvaliableEmail(KeyPressEventArgs e)//跟上面的比多了个@和.，用做判断邮箱
         {
-            bool isava = false;
-            if (char.IsDigit(e.KeyChar) || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar) || e.KeyChar == '@' || e.KeyChar == '.')
-                isava = false;
-            else
-                isava = true;
+            try
+            {
+                bool isava = false;
+                if (char.IsDigit(e.KeyChar) || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar) || e.KeyChar == '@' || e.KeyChar == '.')
+                    isava = false;
+                else
+                    isava = true;
 
-            return isava;
+                return isava;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         public static bool IsAvaliableName(KeyPressEventArgs e) //是否为合法姓名
         {
-            bool isava = false;
-            if ((int)e.KeyChar > 127 || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar)) //如果是汉字
-                isava = false;
-            else
-                isava = true;
+            try
+            {
+                bool isava = false;
+                if ((int)e.KeyChar > 127 || e.KeyChar == '\r' || e.KeyChar == '\b' || char.IsLetter(e.KeyChar)) //如果是汉字
+                    isava = false;
+                else
+                    isava = true;
 
-            return isava;
+                return isava;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         //
         //
         //
         public static bool IntOnly(KeyPressEventArgs e) //仅支持数字类型
         {
+            try { 
             bool isava = false;
             if (char.IsDigit(e.KeyChar) || e.KeyChar == '\r' || e.KeyChar == '\b')
                 isava = false;
             else
                 isava = true;
 
-            return isava;
+            return isava; }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         public static bool isNumber(string st)
         {
@@ -75,44 +113,71 @@ namespace LeventureDesign
                 int var1 = Convert.ToInt32(st);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }//是否是数字？
 
         public static void showMessage(string strMessage, string strTitle) //展示一个提示框，展示strMessage，和标题strTitle
         {
-            MessageBox.Show(strMessage, strTitle);
+            try
+            {
+                MessageBox.Show(strMessage, strTitle);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                
+            }
         }
       
         // bool类型决定是true还是false时展开
         public static void showMessage(bool TrueorFalse, string strMessage, string Type)
         {
-            if (TrueorFalse)
+            try
             {
-                if (TrueorFalse)//如果查到了才需要显示窗体消息
+                if (TrueorFalse)
                 {
-                    PublicClass.showMessage(strMessage, Type);
-                }
+                    if (TrueorFalse)//如果查到了才需要显示窗体消息
+                    {
+                        PublicClass.showMessage(strMessage, Type);
+                    }
 
+                }
+                else
+                {
+                    if (!TrueorFalse)//如果没查到才需要显示对应窗体消息
+                    {
+                        PublicClass.showMessage(strMessage, Type);
+                    }
+
+                }
             }
-            else
+            catch (Exception ex)
             {
-                if (!TrueorFalse)//如果没查到才需要显示对应窗体消息
-                {
-                    PublicClass.showMessage(strMessage, Type);
-                }
-
+                MessageBox.Show(ex.ToString());
+                
             }
         }
 
         public static string getText(TextBox txt1)
+        {
+            try
             {
                 return txt1.Text.Trim().ToString();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
+        }
             //此方法用于判断空int值,若为空则返回true同时展示一个文本框strMessage代表需要展示的内容，Type代表展示的标题
             public static bool isNullorEmpty(int num, string strMessage, string Type)
+        {
+            try
             {
                 if (num == -1)
                 {
@@ -121,8 +186,16 @@ namespace LeventureDesign
                 }
                 return false;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
             //用于判断空串
             public static bool isNullorEmpty(string str, string strMessage, string Type)
+        {
+            try
             {
                 if (str == "")
                 {
@@ -131,10 +204,41 @@ namespace LeventureDesign
                 }
                 return false;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
 
+        public static bool isNullorEmpty(TextBox e)
+        {
+            try
+            {
+                if (PublicClass.getText(e) == "" || PublicClass.getInt(e) == -1)
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
+        }
         public static string getText(DataSet user,int indexX,int indexY)
         {
-            return user.Tables[0].Rows[indexX][indexY].ToString();
+            try
+            {
+                return user.Tables[0].Rows[indexX][indexY].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }
 
         public static int getInt(DataSet user, int indexX, int indexY)

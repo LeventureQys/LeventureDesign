@@ -90,10 +90,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\ClassManagePage.cs">
+    <Compile Include="Admin\MainPages\ClassManagePage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\ClassManagePage.Designer.cs">
+    <Compile Include="Admin\MainPages\ClassManagePage.Designer.cs">
       <DependentUpon>ClassManagePage.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\ClassManagerFrm\Class_Change.cs">
@@ -120,12 +120,6 @@
     <Compile Include="Admin\UsermanagerFrm\UserAdd.Designer.cs">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UsermanagerFrm\UserChange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\UsermanagerFrm\UserChange.Designer.cs">
-      <DependentUpon>UserChange.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\UsermanagerFrm\UserDelete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,20 +132,22 @@
     <Compile Include="Admin\UsermanagerFrm\UserSearch.Designer.cs">
       <DependentUpon>UserSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\FileIO.cs" />
+    <Compile Include="Core\QCore.cs" />
+    <Compile Include="Core\UserManagerment.cs" />
     <Compile Include="Pages\AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\UserManager.cs">
+    <Compile Include="Admin\MainPages\UserManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\UserManager.Designer.cs">
+    <Compile Include="Admin\MainPages\UserManager.Designer.cs">
       <DependentUpon>UserManager.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\DataOperator.cs" />
-    <Compile Include="Core\UserManagerment.cs" />
     <Compile Include="Login\ForgetPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,7 +175,7 @@
     <Compile Include="Login\RegeditPage.Designer.cs">
       <DependentUpon>RegeditPage.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin\ClassManagePage.resx">
+    <EmbeddedResource Include="Admin\MainPages\ClassManagePage.resx">
       <DependentUpon>ClassManagePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\ClassManagerFrm\Class_Change.resx">
@@ -194,9 +190,6 @@
     <EmbeddedResource Include="Admin\UsermanagerFrm\UserAdd.resx">
       <DependentUpon>UserAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\UsermanagerFrm\UserChange.resx">
-      <DependentUpon>UserChange.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UsermanagerFrm\UserDelete.resx">
       <DependentUpon>UserDelete.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,7 +199,7 @@
     <EmbeddedResource Include="Pages\AdminPage.resx">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\UserManager.resx">
+    <EmbeddedResource Include="Admin\MainPages\UserManager.resx">
       <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\ForgetPage.resx">
@@ -243,6 +236,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\QManager\" />
+    <Folder Include="QManager\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -19,18 +19,34 @@ namespace LeventureDesign
 
         public static bool isNullorEmpty(TextBox e)
         {
-            if (e.Text.Trim() == "")
-                return true;
-            else
+            try
+            {
+                if (e.Text.Trim() == "")
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
                 return false;
+            }
         }
         public static bool isNullorEmpty(string e) //此方法检测输入的字符串是否为空
         {
-            if (e.Trim() == "")
+            try
             {
-                return true;
+                if (e.Trim() == "")
+                {
+                    return true;
+                }
+                return false;
             }
-            return false;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return false;
+            }
         }
         //检测输入的int类型变量是否未空
         public static bool isNullorEmpy(int e)
@@ -67,15 +83,23 @@ namespace LeventureDesign
 
         public string ExecSQLString(string sql) //此条一般用于做查询
         {
-            MySqlCommand command = new MySqlCommand(sql, connection); //指定要执行的命令
-            if (connection.State == System.Data.ConnectionState.Closed) //如果当前连接已关闭，则打开
+            try
             {
-                connection.Open(); //打开连接
-            }
-            string result = command.ExecuteScalar().ToString(); //执行该command,并将数据返回给num
+                MySqlCommand command = new MySqlCommand(sql, connection); //指定要执行的命令
+                if (connection.State == System.Data.ConnectionState.Closed) //如果当前连接已关闭，则打开
+                {
+                    connection.Open(); //打开连接
+                }
+                string result = command.ExecuteScalar().ToString(); //执行该command,并将数据返回给num
 
-            connection.Close();
-            return result;//将该值返回给函数
+                connection.Close();
+                return result;//将该值返回给函数
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }
 
         public int ExecSQLResult(string sql) //此条一般用于做增删改这种对数据库数据有直接影响的操作，反馈受影响的数据的行数
@@ -100,12 +124,21 @@ namespace LeventureDesign
 
         public MySqlDataReader GetSqlDataReader(string sql) //返回一个DataReader，用于动态处理数据库，通常用于增删改
         {
-            MySqlCommand command = new MySqlCommand(sql, connection);
-            if (connection.State == ConnectionState.Closed)
-                connection.Open();
-            MySqlDataReader datareader = command.ExecuteReader(); //生成一个datareader
-            return datareader; //将其返回
+            try
+            {
+                MySqlCommand command = new MySqlCommand(sql, connection);
+                if (connection.State == ConnectionState.Closed)
+                    connection.Open();
+                MySqlDataReader datareader = command.ExecuteReader(); //生成一个datareader
+                return datareader; //将其返回
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }//千万注意，这里调用了datareader之后要记得close掉，否则有可能会出现不可预料的错误和资源浪费
+        //close个鸡巴，我看我写的代码也没close过，算了哎
 
         public DataSet GetSqlDataset(string sql) //返回一个dataset，用于静态处理数据库，通常用于单纯的查询
         {

@@ -54,17 +54,26 @@ namespace LeventureDesign.Admin.UsermanagerFrm
 
         private void btn_Check_Click(object sender, EventArgs e)
         {
-            if (rabt_Account.Checked)
+            if (PublicClass.isNullorEmpty(txt_index) && rabt_Account.Checked == true)
+            {
+                PublicClass.showMessage("请输入账号!", "查询提示");
+            }
+            else if(PublicClass.isNullorEmpty(txt_index) && rabt_Account.Checked == false)
+            {
+                PublicClass.showMessage("请输入对应工号！", "查询提示");
+            }
+            else if (!PublicClass.isNullorEmpty(txt_index) && rabt_Account.Checked)
             {
                 dt = user.userdataset_search(PublicClass.getText(txt_index));
+                user.DataView_InitUsers(dataGridView1, dt);
             }
             else
             {
                 dt = user.userdataset_search(PublicClass.getInt(txt_index));
+                user.DataView_InitUsers(dataGridView1, dt);
             }
 
-            dataGridView1.DataSource = dt;
-            dataGridView1.DataMember = "lwx";
+           
         }
 
         private void btn_Change_Click(object sender, EventArgs e)
@@ -84,9 +93,14 @@ namespace LeventureDesign.Admin.UsermanagerFrm
                 nemail = dataGridView1.Rows[0].Cells[6].Value.ToString().Trim(); //定义nemail
                 nclassid = int.Parse(dataGridView1.Rows[0].Cells[7].Value.ToString().Trim()); //定义classid
                 nisavaliable = int.Parse(dataGridView1.Rows[0].Cells[8].Value.ToString().Trim());
-                UserManagerMent userinit = new UserManagerMent();
-                userinit.user_change(nuid, naccount, npassword, nauthority, nsex, nemail, nclassid, nname, nisavaliable);
+                
+                user.user_change(nuid, naccount, npassword, nauthority, nsex, nemail, nclassid, nname, nisavaliable);
             }
+        }
+
+        private void UserSearch_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

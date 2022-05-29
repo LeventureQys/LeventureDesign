@@ -1,0 +1,23 @@
+﻿  Reading Qt configuration (D:/Codes/qt/5.10.1/msvc2015/bin/qmake)
+  uic QInsert.ui
+  uic QManager.ui
+  uic QtQManager.ui
+  uic Search.ui
+  rcc QManager.qrc
+  moc Search.h
+  moc QInsert.h
+  moc QManager.h
+  moc QtQManager.h
+   RCC: Warning: No resources in 'D:\Workshop\LeventureDesign\LeventureDesign\QManager\QManager.qrc'.
+  QInsert.cpp
+  QManager.cpp
+  QtQManager.cpp
+  Search.cpp
+  DataOperate.cpp
+  main.cpp
+  qrc_QManager.cpp
+  moc_Search.cpp
+  moc_QInsert.cpp
+  moc_QManager.cpp
+  moc_QtQManager.cpp
+  QManager.vcxproj -> D:\Workshop\LeventureDesign\LeventureDesign\Debug\QManager.exe

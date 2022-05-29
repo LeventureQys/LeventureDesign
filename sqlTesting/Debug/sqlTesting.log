@@ -1,0 +1,11 @@
+﻿  Reading Qt configuration (D:/Codes/qt/5.10.1/msvc2015/bin/qmake)
+  uic sqlTesting.ui
+  rcc sqlTesting.qrc
+  moc sqlTesting.h
+   RCC: Warning: No resources in 'D:\Workshop\LeventureDesign\sqlTesting\sqlTesting.qrc'.
+  sqlTesting.cpp
+  main.cpp
+  qrc_sqlTesting.cpp
+  moc_sqlTesting.cpp
+sqlTesting.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: static class QStringList __cdecl QSqlDatabase::drivers(void)" (__imp_?drivers@QSqlDatabase@@SA?AVQStringList@@XZ)，函数 "public: __thiscall sqlTesting::sqlTesting(class QWidget *)" (??0sqlTesting@@QAE@PAVQWidget@@@Z) 中引用了该符号
+D:\Workshop\LeventureDesign\Debug\sqlTesting.exe : fatal error LNK1120: 1 个无法解析的外部命令

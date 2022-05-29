@@ -122,8 +122,10 @@ namespace LeventureDesign.Admin.UsermanagerFrm
             this.Controls.Add(this.txt_index);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserSearch";
             this.Text = "UserSearch";
+            this.Load += new System.EventHandler(this.UserSearch_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

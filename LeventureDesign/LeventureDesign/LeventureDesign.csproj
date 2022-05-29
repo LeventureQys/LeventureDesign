@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C005EA0-2C3E-4AC8-BF20-D8AF82101817}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LeventureDesign</RootNamespace>
+    <AssemblyName>LeventureDesign</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EditorConfig.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=fe6ce3ea283749f2, processorArchitecture=MSIL">
+      <HintPath>..\packages\editorconfig.0.12.2\lib\net45\EditorConfig.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.19.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.19.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.1\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.1\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Ude, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\UDE.CSharp.1.1.0\lib\Ude.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\ClassManagerFrm\Class_Change.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\Class_Change.Designer.cs">
+      <DependentUpon>Class_Change.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\Class_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\Class_Delete.Designer.cs">
+      <DependentUpon>Class_Delete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\Class_Insert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\Class_Insert.Designer.cs">
+      <DependentUpon>Class_Insert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PaperManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PaperManager.Designer.cs">
+      <DependentUpon>PaperManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PManager\PAsk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PManager\PAsk.Designer.cs">
+      <DependentUpon>PAsk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PManager\PComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PManager\PComment.Designer.cs">
+      <DependentUpon>PComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PManager\PSelectToComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PManager\PSelectToComment.Designer.cs">
+      <DependentUpon>PSelectToComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PManager\PLittleTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\PManager\PLittleTran.Designer.cs">
+      <DependentUpon>PLittleTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QMain.Designer.cs">
+      <DependentUpon>QMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QManager\QManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QManager\QManager.Designer.cs">
+      <DependentUpon>QManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QManager\QSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QManager\QSearch.Designer.cs">
+      <DependentUpon>QSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\QManager\QuestInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\QManager\QuestInsert.Designer.cs">
+      <DependentUpon>QuestInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserAdd.Designer.cs">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserDelete.Designer.cs">
+      <DependentUpon>UserDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UsermanagerFrm\UserSearch.Designer.cs">
+      <DependentUpon>UserSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\ClassManagePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ClassManagerFrm\ClassManagePage.designer.cs">
+      <DependentUpon>ClassManagePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyse\AnalyseMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyse\AnalyseMain.Designer.cs">
+      <DependentUpon>AnalyseMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyse\FrmAnalyse\PaperSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyse\FrmAnalyse\PaperSelect.Designer.cs">
+      <DependentUpon>PaperSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyse\FrmStu\StuSCAnalyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyse\FrmStu\StuSCAnalyse.Designer.cs">
+      <DependentUpon>StuSCAnalyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyse\FrmStu\WeaknessAnalyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyse\FrmStu\WeaknessAnalyse.Designer.cs">
+      <DependentUpon>WeaknessAnalyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analyse\FrmTeacher\TeacherAnalyse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Analyse\FrmTeacher\TeacherAnalyse.Designer.cs">
+      <DependentUpon>TeacherAnalyse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\AnalyseCore.cs" />
+    <Compile Include="Core\AnswerCore.cs" />
+    <Compile Include="Core\PaperCore.cs" />
+    <Compile Include="Core\QManagerment.cs" />
+    <Compile Include="Pages\AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DataOperator.cs" />
+    <Compile Include="Core\UserManagerment.cs" />
+    <Compile Include="Login\ForgetPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\ForgetPage.Designer.cs">
+      <DependentUpon>ForgetPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\PwdchangePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\PwdchangePage.Designer.cs">
+      <DependentUpon>PwdchangePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChooseClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ChooseClass.Designer.cs">
+      <DependentUpon>ChooseClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ChooseUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ChooseUser.Designer.cs">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginPage.Designer.cs">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TeacherPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\TeacherPage.Designer.cs">
+      <DependentUpon>TeacherPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\PublicClass.cs" />
+    <Compile Include="Login\RegeditPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\RegeditPage.Designer.cs">
+      <DependentUpon>RegeditPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\StudentPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\StudentPage.Designer.cs">
+      <DependentUpon>StudentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimpleHelpers\FileEncoding.cs" />
+    <EmbeddedResource Include="Admin\ClassManagerFrm\Class_Change.resx">
+      <DependentUpon>Class_Change.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ClassManagerFrm\Class_Delete.resx">
+      <DependentUpon>Class_Delete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ClassManagerFrm\Class_Insert.resx">
+      <DependentUpon>Class_Insert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PaperManager.resx">
+      <DependentUpon>PaperManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PManager\PAsk.resx">
+      <DependentUpon>PAsk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PManager\PComment.resx">
+      <DependentUpon>PComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PManager\PSelectToComment.resx">
+      <DependentUpon>PSelectToComment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\PManager\PLittleTran.resx">
+      <DependentUpon>PLittleTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\QMain.resx">
+      <DependentUpon>QMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\QManager\QManager.resx">
+      <DependentUpon>QManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\QManager\QSearch.resx">
+      <DependentUpon>QSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\QManager\QuestInsert.resx">
+      <DependentUpon>QuestInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UsermanagerFrm\UserAdd.resx">
+      <DependentUpon>UserAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UsermanagerFrm\UserDelete.resx">
+      <DependentUpon>UserDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UsermanagerFrm\UserSearch.resx">
+      <DependentUpon>UserSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ClassManagerFrm\ClassManagePage.resx">
+      <DependentUpon>ClassManagePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse\AnalyseMain.resx">
+      <DependentUpon>AnalyseMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse\FrmAnalyse\PaperSelect.resx">
+      <DependentUpon>PaperSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse\FrmStu\StuSCAnalyse.resx">
+      <DependentUpon>StuSCAnalyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse\FrmStu\WeaknessAnalyse.resx">
+      <DependentUpon>WeaknessAnalyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Analyse\FrmTeacher\TeacherAnalyse.resx">
+      <DependentUpon>TeacherAnalyse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\ForgetPage.resx">
+      <DependentUpon>ForgetPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\PwdchangePage.resx">
+      <DependentUpon>PwdchangePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\RegeditPage.resx">
+      <DependentUpon>RegeditPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ChooseClass.resx">
+      <DependentUpon>ChooseClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ChooseUser.resx">
+      <DependentUpon>ChooseUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginPage.resx">
+      <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StudentPage.resx">
+      <DependentUpon>StudentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\TeacherPage.resx">
+      <DependentUpon>TeacherPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

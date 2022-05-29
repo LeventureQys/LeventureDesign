@@ -104,6 +104,7 @@ namespace LeventureDesign.Login
             this.Controls.Add(this.txt_pwd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "PwdchangePage";
             this.Text = "修改密码";
             this.Load += new System.EventHandler(this.PwdchangePage_Load);

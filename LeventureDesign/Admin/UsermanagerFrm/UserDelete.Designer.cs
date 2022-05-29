@@ -50,6 +50,7 @@ namespace LeventureDesign.Admin.UsermanagerFrm
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // button1
@@ -71,6 +72,7 @@ namespace LeventureDesign.Admin.UsermanagerFrm
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "UserDelete";
             this.Text = "删除用户";
             this.ResumeLayout(false);

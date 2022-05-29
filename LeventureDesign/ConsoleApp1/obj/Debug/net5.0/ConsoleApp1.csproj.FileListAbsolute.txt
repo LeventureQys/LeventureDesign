@@ -1,0 +1,16 @@
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.deps.json
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\ref\ConsoleApp1.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\ConsoleApp1.pdb
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\System.Windows.Forms.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\Accessibility.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\System.Deployment.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\bin\Debug\net5.0\System.Runtime.Serialization.Formatters.Soap.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfoInputs.cache
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.AssemblyInfo.cs
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.csproj.CopyComplete
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ref\ConsoleApp1.dll
+D:\Workshop\LeventureDesign\LeventureDesign\ConsoleApp1\obj\Debug\net5.0\ConsoleApp1.pdb

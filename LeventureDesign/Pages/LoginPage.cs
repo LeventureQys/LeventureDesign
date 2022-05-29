@@ -109,9 +109,15 @@ namespace LeventureDesign
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            AdminPage admin = new AdminPage();
-            admin.Show();
-            this.Close();
+            //QManager test = new QManager();
+            //test.Show();
+            PublicClass.PresentAuthority = 3;
+            PublicClass.PresentName = "文轩";
+            PublicClass.PresentUser = "123";
+
+            ClassManagePage classes = new ClassManagePage();
+
+            classes.Show();
         }
     }
 }

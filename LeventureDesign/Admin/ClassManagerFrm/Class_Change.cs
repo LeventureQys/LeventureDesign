@@ -33,17 +33,24 @@ namespace LeventureDesign
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            UserManagerMent classinit = new UserManagerMent();
-            DataSet st = new DataSet();//一个用于接受数据的dataset
-            if (txt_ClassID.Text.Trim() == "") //假如输入的为空
-            {
-                MessageBox.Show("请输入用户学号/工号", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (PublicClass.isNullorEmpty(txt_ClassID))
+             {
+                PublicClass.showMessage("请输入班级ID", "删除班级");
             }
-            else if (txt_ClassID.Text.Trim() != "")//假如不全为空，且是uid不为空
+            else 
             {
-                st = classinit.classtabledataset_search(PublicClass.getInt(txt_ClassID)); //uid找到dataset输入st中
-                dataGridView1.DataSource = st;
-                dataGridView1.DataMember = "lwx";
+                UserManagerMent classinit = new UserManagerMent();
+                DataSet st = new DataSet();//一个用于接受数据的dataset
+                if (txt_ClassID.Text.Trim() == "") //假如输入的为空
+                {
+                    MessageBox.Show("请输入用户学号/工号", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (txt_ClassID.Text.Trim() != "")//假如不全为空，且是uid不为空
+                {
+                    st = classinit.classtabledataset_search(PublicClass.getInt(txt_ClassID)); //uid找到dataset输入st中
+                    dataGridView1.DataSource = st;
+                    dataGridView1.DataMember = "lwx";
+                }
             }
            
         }
