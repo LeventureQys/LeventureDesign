@@ -1,5 +1,3 @@
-# LeventureDesign
+# 考试、出题、结构分析系统，带毕业设计论文
 
-一个毕业设计，带完整论文
-
-一个考试分析评价系统
+Design By Leventure 
